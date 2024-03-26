@@ -1,0 +1,169 @@
+[gd_scene load_steps=8 format=3 uid="uid://6o1dcn7um008"]
+
+[ext_resource type="FontFile" uid="uid://papfgg1a2wgt" path="res://assets/My Assets/myfont.png" id="1_yhucp"]
+[ext_resource type="Script" path="res://scripts/upgrades.gd" id="2_c2uv0"]
+[ext_resource type="Texture2D" uid="uid://dsr2bjcvn2qae" path="res://assets/My Assets/Beackground.png" id="3_n5j7b"]
+[ext_resource type="Texture2D" uid="uid://dsnf1ynyogqj2" path="res://assets/My Assets/Marksman Rifle.png" id="4_xhf26"]
+[ext_resource type="Texture2D" uid="uid://dnaysx0y3xsy8" path="res://assets/My Assets/Grenade.png" id="5_mt7hm"]
+
+[sub_resource type="Theme" id="Theme_pnucp"]
+default_font = ExtResource("1_yhucp")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_nlcql"]
+
+[node name="Upgrades" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pnucp")
+script = ExtResource("2_c2uv0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_n5j7b")
+
+[node name="primary_label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 131.5
+offset_top = 52.0
+offset_right = 195.5
+offset_bottom = 65.0
+scale = Vector2(3, 3)
+text = "Primary:"
+
+[node name="GridContainer" type="GridContainer" parent="primary_label"]
+custom_minimum_size = Vector2(212, 46)
+layout_mode = 0
+offset_left = -24.0
+offset_top = 24.0
+offset_right = 254.0
+offset_bottom = 70.0
+scale = Vector2(0.75, 0.75)
+
+[node name="primary_option_1" type="Button" parent="primary_label/GridContainer"]
+custom_minimum_size = Vector2(278, 0)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_nlcql")
+text = "BLANK"
+
+[node name="primary_option_2" type="Button" parent="primary_label/GridContainer"]
+custom_minimum_size = Vector2(278, 0)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_nlcql")
+text = "blank"
+
+[node name="TextureRect" type="TextureRect" parent="primary_label"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = -9.0
+offset_right = 190.0
+offset_bottom = 21.0
+texture = ExtResource("4_xhf26")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="primary_label"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 10.0
+offset_right = 366.0
+offset_bottom = 115.0
+scale = Vector2(0.75, 0.75)
+
+[node name="secondary_label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 133.0
+offset_top = 311.0
+offset_right = 215.0
+offset_bottom = 324.0
+scale = Vector2(3, 3)
+text = "Secondary:"
+
+[node name="GridContainer" type="GridContainer" parent="secondary_label"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 24.0
+offset_right = 253.0
+offset_bottom = 70.0
+scale = Vector2(0.75, 0.75)
+
+[node name="seconary_option_1" type="Button" parent="secondary_label/GridContainer"]
+custom_minimum_size = Vector2(278, 0)
+layout_mode = 2
+text = "blank"
+
+[node name="seconary_option_2" type="Button" parent="secondary_label/GridContainer"]
+custom_minimum_size = Vector2(278, 0)
+layout_mode = 2
+text = "blank"
+
+[node name="TextureRect" type="TextureRect" parent="secondary_label"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -10.0
+offset_right = 191.0
+offset_bottom = 20.0
+texture = ExtResource("5_mt7hm")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="secondary_label"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 11.0
+offset_right = 367.0
+offset_bottom = 132.0
+scale = Vector2(0.75, 0.75)
+
+[node name="confirm" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 511.0
+offset_right = 97.0
+offset_bottom = 532.0
+scale = Vector2(3, 3)
+text = "Confirm _20 $"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 522.0
+offset_right = 562.0
+offset_bottom = 535.0
+scale = Vector2(3, 3)
+text = "Press E to cancel"
+
+[node name="heal" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 577.0
+offset_right = 71.0
+offset_bottom = 598.0
+scale = Vector2(3, 3)
+text = "Heal +5 health _10 $"
+
+[node name="restock" type="Button" parent="."]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 577.0
+offset_right = 688.0
+offset_bottom = 598.0
+scale = Vector2(3, 3)
+text = "+50% Ammo _30$"
+
+[connection signal="pressed" from="primary_label/GridContainer/primary_option_1" to="." method="_on_primary_option_1_pressed"]
+[connection signal="pressed" from="primary_label/GridContainer/primary_option_2" to="." method="_on_primary_option_2_pressed"]
+[connection signal="pressed" from="secondary_label/GridContainer/seconary_option_1" to="." method="_on_seconary_option_1_pressed"]
+[connection signal="pressed" from="secondary_label/GridContainer/seconary_option_2" to="." method="_on_seconary_option_2_pressed"]
+[connection signal="pressed" from="confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="heal" to="." method="_on_heal_pressed"]
+[connection signal="pressed" from="restock" to="." method="_on_restock_pressed"]

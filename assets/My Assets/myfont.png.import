@@ -1,0 +1,17 @@
+[remap]
+
+importer="dt.abfi"
+type="FontFile"
+uid="uid://papfgg1a2wgt"
+path="res://.godot/imported/myfont.png-6ef57e2460e7c89dceb913427f2b627b.fontdata"
+
+[deps]
+
+source_file="res://assets/My Assets/myfont.png"
+dest_files=["res://.godot/imported/myfont.png-6ef57e2460e7c89dceb913427f2b627b.fontdata"]
+
+[params]
+
+ranges=PackedStringArray("A-Z", "a-z", ".", ",", ":", " ", "-", "(", ")", "1-9", "0", "+", "_", "%", "$")
+letter_spacing=1
+mipmaps=false

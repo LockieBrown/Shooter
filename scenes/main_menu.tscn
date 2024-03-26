@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://docsv3mwlp4cs"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_v3lu1"]
+[ext_resource type="Texture2D" uid="uid://dsr2bjcvn2qae" path="res://assets/My Assets/Beackground.png" id="2_0vh30"]
+[ext_resource type="FontFile" uid="uid://papfgg1a2wgt" path="res://assets/My Assets/myfont.png" id="3_xv25k"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_v3lu1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0vh30")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 40.0
+offset_right = 691.0
+offset_bottom = 327.0
+scale = Vector2(1.75, 1.75)
+theme_override_fonts/normal_font = ExtResource("3_xv25k")
+text = "Controls:
+	- Escape is leave or back
+	- Left click is to shoot
+	- Right Click to use secondary
+	- R to reload (auto reloads when on zero 
+	ammo in gun)
+	- A and D to move left and right respectivly
+	- W or space bar to jump
+	- E to interact
+
+How To Play:
+	- Click Play to choose your weapons
+	- Click the Start button and try to survive 
+	for as long as possible, during the game you 
+	will find the upgrade table, used to increase the 
+	effectiveness of your weapons"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.124
+anchor_top = 0.429
+anchor_right = 0.286
+anchor_bottom = 0.573
+offset_left = -99.848
+offset_top = -55.992
+offset_right = -224.472
+offset_bottom = -118.304
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("3_xv25k")
+action_mode = 0
+text = " Play "
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 336.0
+offset_right = 105.0
+offset_bottom = 367.0
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("3_xv25k")
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

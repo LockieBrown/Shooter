@@ -1,0 +1,390 @@
+[gd_scene load_steps=20 format=3 uid="uid://dlax2a4nssxca"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_mh1a1"]
+[ext_resource type="Texture2D" uid="uid://sojilwwjxjlo" path="res://assets/My Assets/character.png" id="2_5jhss"]
+[ext_resource type="Texture2D" uid="uid://bm6kecsacfjp8" path="res://assets/My Assets/Shotgun.png" id="3_5kw2c"]
+[ext_resource type="Texture2D" uid="uid://o5ggt6qj7i2x" path="res://assets/My Assets/health_under.png" id="4_7eevm"]
+[ext_resource type="Texture2D" uid="uid://cgtgnd4otp4l" path="res://assets/My Assets/casing.png" id="4_pvbmk"]
+[ext_resource type="Texture2D" uid="uid://dwv8gy5weikqn" path="res://assets/My Assets/mag ammo.png" id="5_c4qsl"]
+[ext_resource type="Texture2D" uid="uid://bnw14jxhbabgn" path="res://assets/My Assets/health.png" id="5_ndmds"]
+[ext_resource type="Texture2D" uid="uid://3r1hcut87qu7" path="res://assets/My Assets/metal.png" id="6_4iy0d"]
+[ext_resource type="Texture2D" uid="uid://buu4s717nouj" path="res://assets/My Assets/corruption_crystal.png" id="7_6ngp3"]
+[ext_resource type="Texture2D" uid="uid://dv3atdrm5utrl" path="res://assets/My Assets/player light.png" id="7_kpds2"]
+[ext_resource type="Texture2D" uid="uid://bjlb1gt76fgms" path="res://assets/My Assets/score.png" id="8_uihjo"]
+[ext_resource type="FontFile" uid="uid://papfgg1a2wgt" path="res://assets/My Assets/myfont.png" id="11_ysh3s"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y7gsh"]
+light_mode = 1
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_faid1"]
+radius = 9.0
+height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sehs"]
+size = Vector2(22, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_208bu"]
+size = Vector2(28, 39)
+
+[sub_resource type="Animation" id="Animation_fbms6"]
+resource_name = "restock"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/message:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Half Ammo Restocked", "Half Ammo Restocked"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/message:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/message:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(3, 3), Vector2(0.1, 0.1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/message:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(214.167, 45), Vector2(214.167, 45), Vector2(457, -36)]
+}
+
+[sub_resource type="Animation" id="Animation_4ftvv"]
+resource_name = "levelup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/message:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Level Up", "Level Up"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/message:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/message:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(3, 3), Vector2(0.1, 0.1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/message:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(214.167, 45), Vector2(214.167, 45), Vector2(457, -36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7sai"]
+_data = {
+"levelup": SubResource("Animation_4ftvv"),
+"restock": SubResource("Animation_fbms6")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["character"]]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_y7gsh")
+collision_mask = 3
+script = ExtResource("1_mh1a1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_faid1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5jhss")
+
+[node name="marker_guide" type="Node2D" parent="."]
+rotation = 6.28318
+
+[node name="Marker2D" type="Marker2D" parent="marker_guide"]
+position = Vector2(14, -1.99993)
+
+[node name="Sprite2D" type="Sprite2D" parent="marker_guide"]
+position = Vector2(3, 1.52588e-05)
+texture = ExtResource("3_5kw2c")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="marker_guide/Sprite2D"]
+position = Vector2(-2.99999, -0.999985)
+emitting = false
+amount = 10
+lifetime = 3.0
+one_shot = true
+texture = ExtResource("4_pvbmk")
+particle_flag_align_y = true
+direction = Vector2(-1, 0)
+gravity = Vector2(0, 200)
+initial_velocity_min = 10.0
+initial_velocity_max = 40.0
+scale_amount_min = 1.2
+scale_amount_max = 2.0
+color = Color(0.6, 0.6, 0, 1)
+
+[node name="Death Detection" type="Area2D" parent="." groups=["character"]]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Detection"]
+shape = SubResource("RectangleShape2D_4sehs")
+
+[node name="Damage_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="delay" type="Timer" parent="."]
+one_shot = true
+
+[node name="spawndelay" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[node name="reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="jump_buffer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="stun_delay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="grenade_delay" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(1.2, 1.2)
+transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
+
+[node name="mag_ammo" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(41.25, 136.667)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_c4qsl")
+
+[node name="metal" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(31.25, 173.667)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_4iy0d")
+
+[node name="crystal" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(12.25, 174.667)
+scale = Vector2(1.45455, 1.91919)
+texture = ExtResource("7_6ngp3")
+
+[node name="score" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(41.25, 99.1667)
+scale = Vector2(2.42187, 2.5)
+texture = ExtResource("8_uihjo")
+
+[node name="level" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(41.25, 61.6667)
+scale = Vector2(2.42187, 2.5)
+texture = ExtResource("8_uihjo")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 48.0
+offset_bottom = 21.0
+scale = Vector2(3, 3)
+max_value = 25.0
+value = 25.0
+texture_under = ExtResource("4_7eevm")
+texture_progress = ExtResource("5_ndmds")
+texture_progress_offset = Vector2(2, 2)
+
+[node name="Gun_type" type="Label" parent="CanvasLayer"]
+offset_left = -76.0
+offset_top = 17.0
+offset_right = -30.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "Gun 1"
+
+[node name="Mag" type="Label" parent="CanvasLayer"]
+offset_left = 5.25001
+offset_top = 133.333
+offset_right = 41.25
+offset_bottom = 156.333
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Mag"]
+layout_mode = 0
+offset_left = 6.66667
+offset_top = -7.5
+offset_right = 46.6667
+offset_bottom = 15.5
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "Mag"
+horizontal_alignment = 1
+
+[node name="Ammo" type="Label" parent="CanvasLayer"]
+offset_left = 46.0833
+offset_top = 132.5
+offset_right = 76.0833
+offset_bottom = 155.5
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Ammo"]
+layout_mode = 0
+offset_left = 1.66667
+offset_top = -8.33333
+offset_right = 52.6667
+offset_bottom = 14.6667
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "Ammo"
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="CanvasLayer"]
+offset_left = 22.5
+offset_top = 167.833
+offset_right = 58.5
+offset_bottom = 190.833
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "0"
+horizontal_alignment = 1
+
+[node name="score_label" type="Label" parent="CanvasLayer"]
+offset_left = 5.0
+offset_top = 96.6667
+offset_right = 79.0
+offset_bottom = 119.667
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/score_label"]
+layout_mode = 0
+offset_top = -10.0
+offset_right = 97.0
+offset_bottom = 13.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="level_label" type="Label" parent="CanvasLayer"]
+offset_left = 5.0
+offset_top = 59.1667
+offset_right = 79.0
+offset_bottom = 82.1667
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/level_label"]
+layout_mode = 0
+offset_top = -10.0
+offset_right = 97.0
+offset_bottom = 13.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "Level"
+horizontal_alignment = 1
+
+[node name="message" type="Label" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.186
+anchor_top = 0.069
+anchor_right = 0.616
+anchor_bottom = 0.176
+offset_left = 242.728
+offset_top = -80.712
+offset_right = -87.6321
+offset_bottom = -137.048
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("11_ysh3s")
+text = "Half Ammo Restocked"
+horizontal_alignment = 1
+
+[node name="money_collect" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="money_collect"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_208bu")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(11, -8)
+scale = Vector2(4.03125, 4.03125)
+color = Color(1, 0.996078, 0.996078, 1)
+shadow_enabled = true
+texture = ExtResource("7_kpds2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o7sai")
+}
+
+[connection signal="area_entered" from="Death Detection" to="." method="_on_death_detection_area_entered"]
+[connection signal="area_exited" from="Death Detection" to="." method="_on_death_detection_area_exited"]
+[connection signal="timeout" from="Damage_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Damage_timer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="delay" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]
+[connection signal="area_entered" from="money_collect" to="." method="_on_money_collect_area_entered"]
+[connection signal="body_entered" from="money_collect" to="." method="_on_money_collect_body_entered"]

@@ -1,0 +1,181 @@
+[gd_scene load_steps=13 format=3 uid="uid://cukp4qkq43liy"]
+
+[ext_resource type="Script" path="res://scripts/sentry.gd" id="1_oe32j"]
+[ext_resource type="Texture2D" uid="uid://obgoy0d37tdy" path="res://assets/My Assets/Sentry_base.png" id="2_6f052"]
+[ext_resource type="Texture2D" uid="uid://kijxxarrrb6h" path="res://assets/My Assets/Sentry_head.png" id="3_aoheh"]
+[ext_resource type="Texture2D" uid="uid://cdu834b3j31ev" path="res://assets/My Assets/scan.png" id="4_ngc06"]
+[ext_resource type="Texture2D" uid="uid://dv3atdrm5utrl" path="res://assets/My Assets/player light.png" id="5_v815l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0m4ql"]
+friction = 10.0
+rough = true
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq03k"]
+size = Vector2(16, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnb1m"]
+radius = 84.0238
+
+[sub_resource type="Animation" id="Animation_l0qcn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("scan:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.91641, 1.17656)]
+}
+
+[sub_resource type="Animation" id="Animation_fujjq"]
+resource_name = "scanning"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("scan:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("scan:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("scan:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.499999, 1),
+"update": 0,
+"values": [Vector2(0.001, 0.001), Vector2(2.688, 2.688)]
+}
+
+[sub_resource type="Animation" id="Animation_mdjy2"]
+resource_name = "scanning_double"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("scan:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("scan:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("scan:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.217637, 1),
+"update": 0,
+"values": [Vector2(0.001, 0.001), Vector2(5.376, 5.376)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbd2r"]
+_data = {
+"RESET": SubResource("Animation_l0qcn"),
+"scanning": SubResource("Animation_fujjq"),
+"scanning_double": SubResource("Animation_mdjy2")
+}
+
+[node name="sentry" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_0m4ql")
+script = ExtResource("1_oe32j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6f052")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_vq03k")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dnb1m")
+
+[node name="marker_guide" type="Node2D" parent="."]
+position = Vector2(0, -7)
+
+[node name="Marker2D" type="Marker2D" parent="marker_guide"]
+position = Vector2(10, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="marker_guide"]
+position = Vector2(1.5, 0)
+texture = ExtResource("3_aoheh")
+
+[node name="delay" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="scan_delay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="scan" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(2.91641, 1.17656)
+texture = ExtResource("4_ngc06")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tbd2r")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1.32813, 1.32813)
+color = Color(1, 0.996078, 0.996078, 1)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("5_v815l")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]

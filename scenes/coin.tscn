@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbnc8enq4ibim"]
+
+[ext_resource type="Texture2D" uid="uid://buu4s717nouj" path="res://assets/My Assets/corruption_crystal.png" id="1_2v576"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oam80"]
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjorv"]
+size = Vector2(10, 16)
+
+[sub_resource type="Animation" id="Animation_g5s5c"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_im3ke"]
+_data = {
+"idle": SubResource("Animation_g5s5c")
+}
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["coin"]]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_oam80")
+collision_layer = 16
+collision_mask = 2
+mass = 0.01
+gravity_scale = 0.5
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2v576")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tjorv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_im3ke")
+}
+autoplay = "idle"

@@ -1,0 +1,131 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmq0resic5347"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_8xd14"]
+[ext_resource type="PackedScene" uid="uid://dlax2a4nssxca" path="res://scenes/character.tscn" id="2_if05j"]
+[ext_resource type="PackedScene" uid="uid://cukp4qkq43liy" path="res://scenes/sentry.tscn" id="4_q8kow"]
+[ext_resource type="Texture2D" uid="uid://d2uepbx5dceap" path="res://assets/My Assets/level change animation.png" id="5_20gi1"]
+[ext_resource type="PackedScene" uid="uid://6o1dcn7um008" path="res://scenes/upgrades.tscn" id="5_hpsfk"]
+[ext_resource type="PackedScene" uid="uid://btfah44bt2tn7" path="res://scenes/are_you_sure.tscn" id="6_40ujm"]
+
+[sub_resource type="Animation" id="Animation_ol18i"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade_circle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(20, 20), Vector2(0.001, 0.001)]
+}
+
+[sub_resource type="Animation" id="Animation_8ylg5"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade_circle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0.001, 0.001), Vector2(20, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lxa4x"]
+_data = {
+"fade_in": SubResource("Animation_ol18i"),
+"fade_out": SubResource("Animation_8ylg5")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4bj5"]
+size = Vector2(49, 986)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcd4j"]
+size = Vector2(52, 444)
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_8xd14")
+
+[node name="Character" parent="." instance=ExtResource("2_if05j")]
+position = Vector2(53, 491)
+
+[node name="Spawn_location" type="Node2D" parent="."]
+position = Vector2(183, 283)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lxa4x")
+}
+autoplay = "spawn moving"
+
+[node name="spawn_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="difficulty" type="Timer" parent="."]
+wait_time = 9.0
+autostart = true
+
+[node name="sentry" parent="." instance=ExtResource("4_q8kow")]
+position = Vector2(8, 14)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(55, 493)
+zoom = Vector2(2, 2)
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-26, -2)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-194, 468)
+shape = SubResource("RectangleShape2D_v4bj5")
+
+[node name="progress" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="progress"]
+position = Vector2(944, 479)
+shape = SubResource("RectangleShape2D_mcd4j")
+
+[node name="fade_circle" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(50, 490)
+scale = Vector2(20, 20)
+texture = ExtResource("5_20gi1")
+
+[node name="fade_backup" type="Sprite2D" parent="."]
+visible = false
+z_index = 11
+scale = Vector2(421.937, 421.937)
+texture = ExtResource("5_20gi1")
+
+[node name="spawn_pos" type="Node2D" parent="."]
+position = Vector2(12, 44)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Upgrades" parent="CanvasLayer" instance=ExtResource("5_hpsfk")]
+visible = false
+
+[node name="are you sure" parent="CanvasLayer" instance=ExtResource("6_40ujm")]
+visible = false
+offset_left = -3.0
+offset_top = 227.0
+offset_right = -3.0
+offset_bottom = 227.0
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="difficulty" to="." method="_on_difficulty_timeout"]
+[connection signal="body_entered" from="progress" to="." method="_on_progress_body_entered"]

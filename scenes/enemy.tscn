@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://dl2sjph7gsqqg"]
+
+[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_k8w71"]
+[ext_resource type="Texture2D" uid="uid://b30miodtyvegp" path="res://assets/My Assets/enemy.png" id="2_opfy1"]
+[ext_resource type="Texture2D" uid="uid://o5ggt6qj7i2x" path="res://assets/My Assets/health_under.png" id="3_ins77"]
+[ext_resource type="Texture2D" uid="uid://b5bndmgqqmks6" path="res://assets/My Assets/enemy2.png" id="3_tuji5"]
+[ext_resource type="Texture2D" uid="uid://dnv6w5luulomw" path="res://assets/My Assets/enemy3.png" id="4_ka60n"]
+[ext_resource type="Texture2D" uid="uid://bnw14jxhbabgn" path="res://assets/My Assets/health.png" id="4_nxer5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00ihk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_opfy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tuji5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ka60n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tuji5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ajiqe"]
+radius = 7.0
+height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ye2qp"]
+size = Vector2(18, 18)
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 11
+wall_min_slide_angle = 0.0
+script = ExtResource("1_k8w71")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_00ihk")
+autoplay = "default"
+frame = 2
+frame_progress = 0.96087
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ajiqe")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 0
+max_neighbors = 1
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ye2qp")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -10.0
+offset_top = 9.0
+offset_right = 36.0
+offset_bottom = 19.0
+scale = Vector2(0.435, 0.435)
+max_value = 200.0
+value = 200.0
+rounded = true
+texture_under = ExtResource("3_ins77")
+texture_progress = ExtResource("4_nxer5")
+texture_progress_offset = Vector2(2, 2)
+
+[node name="jump_delay" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="stun" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="stun" to="." method="_on_stun_timeout"]

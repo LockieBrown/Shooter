@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://71o07bqmr6c1"]
+
+[ext_resource type="Texture2D" uid="uid://e8kek352fjnx" path="res://assets/My Assets/anvil.png" id="1_asdfj"]
+[ext_resource type="Script" path="res://scenes/shop.gd" id="1_rgsjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v75hq"]
+size = Vector2(28, 18)
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_rgsjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_asdfj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_v75hq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

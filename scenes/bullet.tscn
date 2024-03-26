@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch1iuapo3afk5"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_wsf1m"]
+[ext_resource type="Texture2D" uid="uid://c5t8cpgs76iuh" path="res://assets/My Assets/bullet.png" id="2_g86bk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpet2"]
+size = Vector2(4, 2)
+
+[node name="Bullet" type="Node2D" groups=["bullet"]]
+script = ExtResource("1_wsf1m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.326066, 0.326066)
+texture = ExtResource("2_g86bk")
+
+[node name="Area2D" type="Area2D" parent="." groups=["bullet"]]
+collision_layer = 8
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vpet2")
+
+[node name="despawn" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="hit" from="." to="." method="_on_hit"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="despawn" to="." method="_on_despawn_timeout"]

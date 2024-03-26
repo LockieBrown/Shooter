@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqb0dmrvrsrdg"]
+
+[ext_resource type="Script" path="res://scripts/Grenade.gd" id="1_towcn"]
+[ext_resource type="Texture2D" uid="uid://dnaysx0y3xsy8" path="res://assets/My Assets/Grenade.png" id="2_nyub3"]
+[ext_resource type="Texture2D" uid="uid://dv3atdrm5utrl" path="res://assets/My Assets/player light.png" id="3_1crmx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7sa0n"]
+rough = true
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63cm5"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mn2b1"]
+radius = 39.0
+
+[node name="Grenade" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_7sa0n")
+can_sleep = false
+script = ExtResource("1_towcn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_63cm5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 5.75959
+texture = ExtResource("2_nyub3")
+
+[node name="Area2D" type="Area2D" parent="." groups=["grenade"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mn2b1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.625, 0.625)
+energy = 30.0
+texture = ExtResource("3_1crmx")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

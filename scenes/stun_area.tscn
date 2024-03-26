@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx4y0882s7doo"]
+
+[ext_resource type="Script" path="res://scripts/stun_area.gd" id="1_2tf76"]
+[ext_resource type="Texture2D" uid="uid://ba5147d2qv2u7" path="res://assets/My Assets/stun_bullet.png" id="2_88be5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_snnqk"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xone6"]
+radius = 21.0
+
+[node name="stun_area" type="Node2D" groups=["stun_bullet"]]
+script = ExtResource("1_2tf76")
+
+[node name="Area2D" type="Area2D" parent="." groups=["stun_bullet"]]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_snnqk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.309
+scale = Vector2(0.569079, 0.569079)
+texture = ExtResource("2_88be5")
+
+[node name="despawn" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Area2D2" type="Area2D" parent="." groups=["stun_bullet"]]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_xone6")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="despawn" to="." method="_on_despawn_timeout"]

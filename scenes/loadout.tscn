@@ -1,0 +1,231 @@
+[gd_scene load_steps=13 format=3 uid="uid://8tdxnbq3mb57"]
+
+[ext_resource type="Script" path="res://scripts/loadout.gd" id="1_rsada"]
+[ext_resource type="Texture2D" uid="uid://dsr2bjcvn2qae" path="res://assets/My Assets/Beackground.png" id="2_i6qep"]
+[ext_resource type="FontFile" uid="uid://papfgg1a2wgt" path="res://assets/My Assets/myfont.png" id="3_kw1by"]
+[ext_resource type="Texture2D" uid="uid://bm6kecsacfjp8" path="res://assets/My Assets/Shotgun.png" id="3_qgyhg"]
+[ext_resource type="Texture2D" uid="uid://dk5i8sjwebhd" path="res://assets/My Assets/Submachine Gun.png" id="4_ikt2j"]
+[ext_resource type="Texture2D" uid="uid://dsnf1ynyogqj2" path="res://assets/My Assets/Marksman Rifle.png" id="5_quitm"]
+[ext_resource type="Texture2D" uid="uid://dnaysx0y3xsy8" path="res://assets/My Assets/Grenade.png" id="6_re27j"]
+[ext_resource type="Texture2D" uid="uid://ci2ya884280iy" path="res://assets/My Assets/Sentry_Icon.png" id="7_4ouha"]
+[ext_resource type="Texture2D" uid="uid://b12y30fdivqix" path="res://assets/My Assets/stun_gun.png" id="8_jlxsd"]
+[ext_resource type="Texture2D" uid="uid://dgm33ybmr5h4o" path="res://assets/My Assets/loadout.png" id="10_r1b1a"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_sueav"]
+resource_name = "Primary"
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ejlfl"]
+resource_name = "secondary"
+
+[node name="Loadout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rsada")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i6qep")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.09
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = -50.0
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 40
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_kw1by")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sueav")
+text = "Shotgun"
+icon = ExtResource("3_qgyhg")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_kw1by")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sueav")
+text = "Submachine
+Gun"
+icon = ExtResource("4_ikt2j")
+expand_icon = true
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_kw1by")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sueav")
+text = "Marksman
+Rifle"
+icon = ExtResource("5_quitm")
+expand_icon = true
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 40
+
+[node name="Button4" type="Button" parent="GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_kw1by")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ejlfl")
+text = "Grenade"
+icon = ExtResource("6_re27j")
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button5" type="Button" parent="GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_kw1by")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ejlfl")
+text = "Sentry Gun"
+icon = ExtResource("7_4ouha")
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button6" type="Button" parent="GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_kw1by")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ejlfl")
+text = "Stun Gun"
+icon = ExtResource("8_jlxsd")
+icon_alignment = 2
+expand_icon = true
+
+[node name="ButtonPlay" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = 190.0
+offset_right = 132.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_kw1by")
+text = "Play"
+
+[node name="text_background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.385
+anchor_top = 0.122
+anchor_right = 0.615
+anchor_bottom = 0.767
+offset_left = 0.47998
+offset_top = -0.0560074
+offset_right = -0.47998
+offset_bottom = -0.0160217
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_r1b1a")
+
+[node name="Primary_weapon_label" type="RichTextLabel" parent="text_background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.029
+anchor_right = 1.0
+anchor_bottom = 0.1
+offset_left = 38.0
+offset_top = 22.878
+offset_right = -39.0
+offset_bottom = 40.2
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("3_kw1by")
+text = "Primary: No Weapon"
+
+[node name="Primary_weapon_description" type="RichTextLabel" parent="text_background"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 39.0
+offset_top = 63.0
+offset_right = -38.0
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("3_kw1by")
+text = "No weapon selected"
+
+[node name="Secondary_weapon_label" type="RichTextLabel" parent="text_background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011
+anchor_top = 0.493
+anchor_right = 0.985
+anchor_bottom = 0.567
+offset_left = 34.096
+offset_top = 21.926
+offset_right = -33.04
+offset_bottom = 34.994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_kw1by")
+text = "Secondary: No Weapon"
+
+[node name="Secondary_weapon_description" type="RichTextLabel" parent="text_background"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -163.0
+offset_right = -38.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_kw1by")
+text = "No weapon slected"
+
+[connection signal="pressed" from="GridContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GridContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="GridContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="GridContainer2/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="GridContainer2/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="GridContainer2/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]

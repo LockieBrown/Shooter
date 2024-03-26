@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu8npckgh6g0x"]
+
+[ext_resource type="Script" path="res://scripts/Story.gd" id="1_86r6f"]
+[ext_resource type="Texture2D" uid="uid://dsr2bjcvn2qae" path="res://assets/My Assets/Beackground.png" id="2_51xfb"]
+[ext_resource type="FontFile" uid="uid://papfgg1a2wgt" path="res://assets/My Assets/myfont.png" id="3_c6xob"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iy3kc"]
+font = ExtResource("3_c6xob")
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Story" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_86r6f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_51xfb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 34.0
+offset_top = 36.0
+offset_right = 766.0
+offset_bottom = 597.0
+scale = Vector2(1.5, 1.5)
+text = "New Assignment:
+
+You have been assigned the role of exterminating a parasite, coming from a mysretious cave, this parasite latches onto flying bugs, mass breeding them to create an army, this parasite, once corrupted the bug no longer uses a heart or brain to live, but a super strong metal that connects to a hive mind, through small radio signals and forms a hard protective shell around them. This material can be used to upgrade your weapons at the station placed near the entrance to the cave.
+
+The parasite hive mind also has creeping vines that transmit the radio waves back to the hive mind, causing the creatures to always know where you are, these vines are very strong. Due to recent earthquakes in the area, from the disruptance of ground stabilty from the creeping vines, chunks of rock have fallen out of the roof, creating a large cavern with many boulders suspened on the vines. We suggest you use these boulders for defensive positions as the enemies are slow to tranverse around them, dont worry about them falling we have placed many heavy items on these boulders to ensure their stability, the vines have not budged.
+
+
+Good luck, Investegate, Exterminate, and survive"
+label_settings = SubResource("LabelSettings_iy3kc")
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 546.0
+offset_right = 210.0
+offset_bottom = 567.0
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("3_c6xob")
+text = "Next"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
