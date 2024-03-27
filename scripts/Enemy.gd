@@ -90,6 +90,7 @@ func _on_area_2d_area_entered(area):
 		if Global.Grenade_stuns == true:
 			stunned = true
 	elif area.is_in_group("stun_bullet") && stunned == false:
+		$TextureProgressBar.value -= Global.stun_damage
 		stunned = true
 		$stun.start()
 		var stun_gun = Stun_gun.instantiate()

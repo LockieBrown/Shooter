@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbcxe1nnmp58r"]
 
 [ext_resource type="Script" path="res://scripts/Sentry_bullet.gd" id="1_h25oc"]
-[ext_resource type="Texture2D" uid="uid://c5t8cpgs76iuh" path="res://assets/My Assets/bullet.png" id="2_vwu1w"]
+[ext_resource type="Texture2D" uid="uid://c5t8cpgs76iuh" path="res://assets/My Assets/bullet.png" id="2_fmw4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpet2"]
 size = Vector2(4, 2)
@@ -11,9 +11,9 @@ script = ExtResource("1_h25oc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.326066, 0.326066)
-texture = ExtResource("2_vwu1w")
+texture = ExtResource("2_fmw4t")
 
-[node name="Area2D" type="Area2D" parent="." groups=["bullet"]]
+[node name="Area2D" type="Area2D" parent="." groups=["sentry_bullet"]]
 collision_layer = 8
 collision_mask = 7
 

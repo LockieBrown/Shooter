@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqb0dmrvrsrdg"]
 
 [ext_resource type="Script" path="res://scripts/Grenade.gd" id="1_towcn"]
-[ext_resource type="Texture2D" uid="uid://dnaysx0y3xsy8" path="res://assets/My Assets/Grenade.png" id="2_nyub3"]
-[ext_resource type="Texture2D" uid="uid://dv3atdrm5utrl" path="res://assets/My Assets/player light.png" id="3_1crmx"]
+[ext_resource type="Texture2D" uid="uid://dnaysx0y3xsy8" path="res://assets/My Assets/Grenade.png" id="2_usrow"]
+[ext_resource type="Texture2D" uid="uid://dv3atdrm5utrl" path="res://assets/My Assets/player light.png" id="3_q3ab0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7sa0n"]
 rough = true
@@ -27,7 +27,7 @@ shape = SubResource("CircleShape2D_63cm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 5.75959
-texture = ExtResource("2_nyub3")
+texture = ExtResource("2_usrow")
 
 [node name="Area2D" type="Area2D" parent="." groups=["grenade"]]
 
@@ -41,6 +41,6 @@ autostart = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.625, 0.625)
 energy = 30.0
-texture = ExtResource("3_1crmx")
+texture = ExtResource("3_q3ab0")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

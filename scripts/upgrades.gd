@@ -197,7 +197,7 @@ func _on_seconary_option_1_pressed():
 		if Global.Secondary_type == Global.Secondary.Grenade:
 			$secondary_label/RichTextLabel.text = ("+ increase explosion size by 50%\n_ decrease damage by 25%")
 		elif Global.Secondary_type == Global.Secondary.Sentry:
-			$secondary_label/RichTextLabel.text = ("+ double detection range\n_ damage decreases by 10%\n_ fire rate decrease by 10%")
+			$secondary_label/RichTextLabel.text = ("+ double detection range\n_ fire rate decrease by 10%")
 		elif Global.Secondary_type == Global.Secondary.Stun_gun:
 			$secondary_label/RichTextLabel.text = ("+ rate of fire increased by 50%\n_ stun size decreased by 25%")
 	secondary_option = 1
@@ -221,7 +221,7 @@ func _on_seconary_option_2_pressed():
 		if Global.Secondary_type == Global.Secondary.Grenade:
 			$secondary_label/RichTextLabel.text = ("+ increase damage size by 50%\n_ decrease explosion size by 25%")
 		elif Global.Secondary_type == Global.Secondary.Sentry:
-			$secondary_label/RichTextLabel.text = ("+ 20% extra player damage\n+ 20% extra player rate of fire\n_ -10% damage from sentry\n_ -10% rate of fire from sentry")
+			$secondary_label/RichTextLabel.text = ("+ 20% extra player damage\n+ 20% extra player rate of fire\n_ -10% damage from sentry")
 		elif Global.Secondary_type == Global.Secondary.Stun_gun:
 			$secondary_label/RichTextLabel.text = ("+ range increased by 20%\n+ stun size increased by 25%\n_ rate of fire decreased by 10%")
 	secondary_option = 2
@@ -243,7 +243,7 @@ func _on_confirm_pressed():
 				if primary_option == 1:
 					Global.pierce += 2
 				elif primary_option == 2:
-					Global.delay -= 0.25
+					Global.Delay -= 0.25
 			if Global.Secondary_type == Global.Secondary.Grenade:
 				if secondary_option == 1:
 					Global.Grenade_size *= 125/100

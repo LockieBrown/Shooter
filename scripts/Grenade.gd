@@ -9,6 +9,7 @@ func _ready():
 
 func _process(delta):
 	$Area2D.scale = Vector2(Global.Grenade_size,Global.Grenade_size)
+	$Timer.wait_time(1.5)
 
 #explodes showing size
 func _on_timer_timeout():

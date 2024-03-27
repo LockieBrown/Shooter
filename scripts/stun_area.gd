@@ -12,7 +12,7 @@ var Pierce_left = Global.Stun_gun_pierce
 
 #start the timer for a bullet to only exist for 0.1 second
 func _ready():
-	$despawn.wait_time = Global.stun
+	$despawn.wait_time = Global.stun_despawn
 	$despawn.start()
 	$Area2D2.scale = Vector2(Global.Stun_size, Global.Stun_size)
 

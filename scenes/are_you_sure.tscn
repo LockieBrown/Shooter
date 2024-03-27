@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://btfah44bt2tn7"]
 
-[ext_resource type="FontFile" uid="uid://papfgg1a2wgt" path="res://assets/My Assets/myfont.png" id="1_oqn8f"]
-[ext_resource type="Script" path="res://scenes/are_you_sure.gd" id="2_mbgkp"]
+[ext_resource type="FontFile" uid="uid://papfgg1a2wgt" path="res://assets/My Assets/My Assets/myfont.png" id="1_oqn8f"]
+[ext_resource type="Script" path="res://scripts/are_you_sure.gd" id="2_mbgkp"]
 
 [sub_resource type="Theme" id="Theme_tnso0"]
 default_font = ExtResource("1_oqn8f")

@@ -1,26 +1,26 @@
 [gd_scene load_steps=10 format=3 uid="uid://dl2sjph7gsqqg"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_k8w71"]
-[ext_resource type="Texture2D" uid="uid://b30miodtyvegp" path="res://assets/My Assets/enemy.png" id="2_opfy1"]
-[ext_resource type="Texture2D" uid="uid://o5ggt6qj7i2x" path="res://assets/My Assets/health_under.png" id="3_ins77"]
-[ext_resource type="Texture2D" uid="uid://b5bndmgqqmks6" path="res://assets/My Assets/enemy2.png" id="3_tuji5"]
-[ext_resource type="Texture2D" uid="uid://dnv6w5luulomw" path="res://assets/My Assets/enemy3.png" id="4_ka60n"]
-[ext_resource type="Texture2D" uid="uid://bnw14jxhbabgn" path="res://assets/My Assets/health.png" id="4_nxer5"]
+[ext_resource type="Texture2D" uid="uid://b30miodtyvegp" path="res://assets/My Assets/enemy.png" id="2_6cimj"]
+[ext_resource type="Texture2D" uid="uid://b5bndmgqqmks6" path="res://assets/My Assets/enemy2.png" id="3_mtrbh"]
+[ext_resource type="Texture2D" uid="uid://dnv6w5luulomw" path="res://assets/My Assets/enemy3.png" id="4_ce6ut"]
+[ext_resource type="Texture2D" uid="uid://o5ggt6qj7i2x" path="res://assets/My Assets/health_under.png" id="5_avi43"]
+[ext_resource type="Texture2D" uid="uid://bnw14jxhbabgn" path="res://assets/My Assets/health.png" id="6_g8ei8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_00ihk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_opfy1")
+"texture": ExtResource("2_6cimj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_tuji5")
+"texture": ExtResource("3_mtrbh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ka60n")
+"texture": ExtResource("4_ce6ut")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_tuji5")
+"texture": ExtResource("3_mtrbh")
 }],
 "loop": true,
 "name": &"default",
@@ -73,8 +73,8 @@ scale = Vector2(0.435, 0.435)
 max_value = 200.0
 value = 200.0
 rounded = true
-texture_under = ExtResource("3_ins77")
-texture_progress = ExtResource("4_nxer5")
+texture_under = ExtResource("5_avi43")
+texture_progress = ExtResource("6_g8ei8")
 texture_progress_offset = Vector2(2, 2)
 
 [node name="jump_delay" type="Timer" parent="."]

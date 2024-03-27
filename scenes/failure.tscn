@@ -1,10 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://bven11n5pifhg"]
+[gd_scene load_steps=5 format=3 uid="uid://bven11n5pifhg"]
 
-[ext_resource type="Texture2D" uid="uid://dkfe7lc8n5114" path="res://icon.svg" id="1_hv2d0"]
+[ext_resource type="FontFile" uid="uid://papfgg1a2wgt" path="res://assets/My Assets/myfont.png" id="1_e24d0"]
+[ext_resource type="Script" path="res://scripts/failure.gd" id="2_0h2wo"]
+[ext_resource type="Texture2D" uid="uid://dsr2bjcvn2qae" path="res://assets/My Assets/Beackground.png" id="3_o3gns"]
 
-[node name="FAILURE" type="Node2D"]
+[sub_resource type="Theme" id="Theme_l8xdt"]
+default_font = ExtResource("1_e24d0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(559, 309)
-scale = Vector2(10.3125, 6.625)
-texture = ExtResource("1_hv2d0")
+[node name="failure" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_l8xdt")
+script = ExtResource("2_0h2wo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_o3gns")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 57.0
+offset_right = 180.0
+offset_bottom = 80.0
+scale = Vector2(8, 8)
+text = "You have failed"
+
+[node name="final_score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 219.0
+offset_right = 172.0
+offset_bottom = 232.0
+scale = Vector2(6, 6)
+text = "Your Score Was:"
+
+[node name="score" type="Label" parent="final_score"]
+layout_mode = 0
+offset_top = 17.6667
+offset_right = 40.0
+offset_bottom = 30.6667
+text = "0"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 483.0
+offset_right = 139.0
+offset_bottom = 504.0
+scale = Vector2(5, 5)
+text = "Exit"
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

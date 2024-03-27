@@ -67,7 +67,7 @@ func _process(delta):
 		$"CanvasLayer/are you sure".visible = true
 	
 	#changing the difficulty over time
-	Global.difficulty = Global.difficulty_time / 3
+	Global.difficulty = Global.difficulty_time / 2
 	
 	#changing level
 	if change == true:

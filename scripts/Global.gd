@@ -55,7 +55,7 @@ var Grenade_fuse = 1.5
 #stun gun
 var Stun_gun_pierce = 1
 var Stun_size = 1
-var stun_despawn
+var stun_despawn = 0.1
 var stun_duration = 1
 var stun_damage = 0
 var stun_delay = 2

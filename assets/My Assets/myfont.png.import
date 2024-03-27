@@ -3,12 +3,12 @@
 importer="dt.abfi"
 type="FontFile"
 uid="uid://papfgg1a2wgt"
-path="res://.godot/imported/myfont.png-6ef57e2460e7c89dceb913427f2b627b.fontdata"
+path="res://.godot/imported/myfont.png-310c9ee37878ea9ee9911780436e21c5.fontdata"
 
 [deps]
 
-source_file="res://assets/My Assets/myfont.png"
-dest_files=["res://.godot/imported/myfont.png-6ef57e2460e7c89dceb913427f2b627b.fontdata"]
+source_file="res://assets/My Assets/My Assets/myfont.png"
+dest_files=["res://.godot/imported/myfont.png-310c9ee37878ea9ee9911780436e21c5.fontdata"]
 
 [params]
 
