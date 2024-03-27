@@ -1,15 +1,15 @@
 df00918b4f610b8c5f71dedc1c6318c5
-::res://::1711399442
-export_presets.cfg::TextFile::-1::1711399442::0::1::::<><>::
+::res://::1711514027
+export_presets.cfg::TextFile::-1::1711512020::0::1::::<><>::
 icon.svg::CompressedTexture2D::7871772971970360281::1711399442::1711504284::1::::<><>::
 README.md::TextFile::-1::1711399442::0::1::::<><>::
-::res://addons/::1711399442
-::res://addons/abfi/::1711399442
+::res://addons/::1711512070
+::res://addons/abfi/::1711512070
 import.gd::GDScript::-1::1711399442::0::1::::<>EditorImportPlugin<>::
 plugin.cfg::TextFile::-1::1711399442::0::1::::<><>::
 plugin.gd::GDScript::-1::1711399442::0::1::::<>EditorPlugin<>::
-::res://assets/::1711399442
-::res://assets/My Assets/::1711399442
+::res://assets/::1711512070
+::res://assets/My Assets/::1711512070
 anvil.png::CompressedTexture2D::349494723426762637::1711399442::1711504500::1::::<><>::
 Beackground.png::CompressedTexture2D::8459397279753857804::1711399442::1711504500::1::::<><>::
 boot.png::CompressedTexture2D::3259754588066313681::1711399442::1711504502::1::::<><>::
@@ -48,35 +48,35 @@ stun_bullet.png::CompressedTexture2D::2449984132780677372::1711399442::171150450
 stun_gun.png::CompressedTexture2D::4268577348652906031::1711399442::1711504500::1::::<><>::
 Submachine Gun.png::CompressedTexture2D::233047866104439061::1711399442::1711504500::1::::<><>::
 tileset.png::CompressedTexture2D::3581881820557266784::1711399442::1711504500::1::::<><>::
-::res://assets/My Assets/light/::1711399442
+::res://assets/My Assets/light/::1711512070
 Asset 2.png::CompressedTexture2D::1265001436901447757::1711399442::1711504294::1::::<><>::
-::res://assets/My Assets/light/1x/::1711399442
+::res://assets/My Assets/light/1x/::1711512070
 Asset 3.png::CompressedTexture2D::3382753167157788070::1711399442::1711504294::1::::<><>::
-::res://assets/My Assets/tilemaps/::1711399442
-corruption.tres::TileSet::3365231570933659404::1711504428::0::1::::<><>::uid://mowdf2cl456s::::res://assets/My Assets/My Assets/corrupted tileset.png
-ground.tres::TileSet::8596575865030072288::1711504486::0::1::::<><>::uid://brbdcnhx1m27u::::res://assets/My Assets/tileset.png<>uid://b706jfgq3kc5m::::res://assets/My Assets/stone.png
-sky.tres::TileSet::5062735029404635354::1711504486::0::1::::<><>::uid://csspyavp7o8kx::::res://assets/My Assets/sky.png
-::res://scenes/::1711399442
+::res://assets/My Assets/tilemaps/::1711513151
+corruption.tres::TileSet::3365231570933659404::1711513151::0::1::::<><>::uid://mowdf2cl456s::::res://assets/My Assets/corrupted tileset.png
+ground.tres::TileSet::8596575865030072288::1711513151::0::1::::<><>::uid://brbdcnhx1m27u::::res://assets/My Assets/tileset.png<>uid://b706jfgq3kc5m::::res://assets/My Assets/stone.png
+sky.tres::TileSet::5062735029404635354::1711513151::0::1::::<><>::uid://csspyavp7o8kx::::res://assets/My Assets/sky.png
+::res://scenes/::1711513152
 are_you_sure.tscn::PackedScene::3730344670191741198::1711504316::0::1::::<><>::uid://papfgg1a2wgt::::res://assets/My Assets/My Assets/myfont.png<>res://scripts/are_you_sure.gd
 bullet.tscn::PackedScene::5318358570123798342::1711399442::0::1::::<><>::res://scripts/bullet.gd<>uid://c5t8cpgs76iuh::::res://assets/My Assets/bullet.png
 character.tscn::PackedScene::7932784083781497008::1711504486::0::1::::<><>::res://scripts/Player.gd<>uid://sojilwwjxjlo::::res://assets/My Assets/character.png<>uid://bm6kecsacfjp8::::res://assets/My Assets/Shotgun.png<>uid://o5ggt6qj7i2x::::res://assets/My Assets/health_under.png<>uid://cgtgnd4otp4l::::res://assets/My Assets/casing.png<>uid://dwv8gy5weikqn::::res://assets/My Assets/mag ammo.png<>uid://bnw14jxhbabgn::::res://assets/My Assets/health.png<>uid://3r1hcut87qu7::::res://assets/My Assets/metal.png<>uid://buu4s717nouj::::res://assets/My Assets/corruption_crystal.png<>uid://dv3atdrm5utrl::::res://assets/My Assets/player light.png<>uid://bjlb1gt76fgms::::res://assets/My Assets/score.png<>uid://papfgg1a2wgt::::res://assets/My Assets/myfont.png
 coin.tscn::PackedScene::2483627034260199408::1711399442::0::1::::<><>::uid://buu4s717nouj::::res://assets/My Assets/corruption_crystal.png
-enemy.tscn::PackedScene::7988187308598774934::1711508634::0::1::::<><>::res://scripts/Enemy.gd<>uid://b30miodtyvegp::::res://assets/My Assets/enemy.png<>uid://b5bndmgqqmks6::::res://assets/My Assets/enemy2.png<>uid://dnv6w5luulomw::::res://assets/My Assets/enemy3.png<>uid://o5ggt6qj7i2x::::res://assets/My Assets/health_under.png<>uid://bnw14jxhbabgn::::res://assets/My Assets/health.png
-failure.tscn::PackedScene::3869481049728500920::1711508636::0::1::::<><>::uid://papfgg1a2wgt::::res://assets/My Assets/myfont.png<>res://scripts/failure.gd<>uid://dsr2bjcvn2qae::::res://assets/My Assets/Beackground.png
-grenade.tscn::PackedScene::3513030499376020912::1711508636::0::1::::<><>::res://scripts/Grenade.gd<>uid://dnaysx0y3xsy8::::res://assets/My Assets/Grenade.png<>uid://dv3atdrm5utrl::::res://assets/My Assets/player light.png
-level_1.tscn::PackedScene::5801440944976450359::1711508636::0::1::::<><>::uid://duqil35j7l0d5::::res://assets/My Assets/tilemaps/ground.tres<>uid://bn7e4wne7630s::::res://assets/My Assets/tilemaps/corruption.tres<>uid://ceeorhiay0iso::::res://assets/My Assets/tilemaps/sky.tres<>uid://bogvpkx7y5pus::::res://assets/My Assets/light/1x/Asset 3.png
-level_2.tscn::PackedScene::3370902678562411775::1711508638::0::1::::<><>::uid://duqil35j7l0d5::::res://assets/My Assets/tilemaps/ground.tres<>uid://bn7e4wne7630s::::res://assets/My Assets/tilemaps/corruption.tres<>uid://ceeorhiay0iso::::res://assets/My Assets/tilemaps/sky.tres<>uid://bogvpkx7y5pus::::res://assets/My Assets/light/1x/Asset 3.png<>uid://71o07bqmr6c1::::res://scenes/shop.tscn<>uid://dv3atdrm5utrl::::res://assets/My Assets/player light.png<>uid://b706jfgq3kc5m::::res://assets/My Assets/stone.png
+enemy.tscn::PackedScene::7988187308598774934::1711513151::0::1::::<><>::res://scripts/Enemy.gd<>uid://b30miodtyvegp::::res://assets/My Assets/enemy.png<>uid://b5bndmgqqmks6::::res://assets/My Assets/enemy2.png<>uid://dnv6w5luulomw::::res://assets/My Assets/enemy3.png<>uid://o5ggt6qj7i2x::::res://assets/My Assets/health_under.png<>uid://bnw14jxhbabgn::::res://assets/My Assets/health.png
+failure.tscn::PackedScene::3869481049728500920::1711513152::0::1::::<><>::uid://papfgg1a2wgt::::res://assets/My Assets/myfont.png<>res://scripts/failure.gd<>uid://dsr2bjcvn2qae::::res://assets/My Assets/Beackground.png
+grenade.tscn::PackedScene::3513030499376020912::1711513152::0::1::::<><>::res://scripts/Grenade.gd<>uid://dnaysx0y3xsy8::::res://assets/My Assets/Grenade.png<>uid://dv3atdrm5utrl::::res://assets/My Assets/player light.png
+level_1.tscn::PackedScene::5801440944976450359::1711513152::0::1::::<><>::uid://duqil35j7l0d5::::res://assets/My Assets/tilemaps/ground.tres<>uid://bn7e4wne7630s::::res://assets/My Assets/tilemaps/corruption.tres<>uid://ceeorhiay0iso::::res://assets/My Assets/tilemaps/sky.tres<>uid://bogvpkx7y5pus::::res://assets/My Assets/light/1x/Asset 3.png
+level_2.tscn::PackedScene::3370902678562411775::1711513152::0::1::::<><>::uid://duqil35j7l0d5::::res://assets/My Assets/tilemaps/ground.tres<>uid://bn7e4wne7630s::::res://assets/My Assets/tilemaps/corruption.tres<>uid://ceeorhiay0iso::::res://assets/My Assets/tilemaps/sky.tres<>uid://bogvpkx7y5pus::::res://assets/My Assets/light/1x/Asset 3.png<>uid://71o07bqmr6c1::::res://scenes/shop.tscn<>uid://dv3atdrm5utrl::::res://assets/My Assets/player light.png<>uid://b706jfgq3kc5m::::res://assets/My Assets/stone.png
 loadout.tscn::PackedScene::2355678926733530752::1711504492::0::1::::<><>::res://scripts/loadout.gd<>uid://dsr2bjcvn2qae::::res://assets/My Assets/Beackground.png<>uid://papfgg1a2wgt::::res://assets/My Assets/myfont.png<>uid://bm6kecsacfjp8::::res://assets/My Assets/Shotgun.png<>uid://dk5i8sjwebhd::::res://assets/My Assets/Submachine Gun.png<>uid://dsnf1ynyogqj2::::res://assets/My Assets/Marksman Rifle.png<>uid://dnaysx0y3xsy8::::res://assets/My Assets/Grenade.png<>uid://ci2ya884280iy::::res://assets/My Assets/Sentry_Icon.png<>uid://b12y30fdivqix::::res://assets/My Assets/stun_gun.png<>uid://dgm33ybmr5h4o::::res://assets/My Assets/loadout.png
-main_menu.tscn::PackedScene::8147166515268034482::1711508632::0::1::::<><>::res://scripts/main_menu.gd<>uid://dsr2bjcvn2qae::::res://assets/My Assets/Beackground.png<>uid://papfgg1a2wgt::::res://assets/My Assets/myfont.png
-sentry.tscn::PackedScene::6198225417190667012::1711508634::0::1::::<><>::res://scripts/sentry.gd<>uid://obgoy0d37tdy::::res://assets/My Assets/Sentry_base.png<>uid://kijxxarrrb6h::::res://assets/My Assets/Sentry_head.png<>uid://cdu834b3j31ev::::res://assets/My Assets/scan.png<>uid://dv3atdrm5utrl::::res://assets/My Assets/player light.png
-sentry_bullet.tscn::PackedScene::7234984670531586435::1711508634::0::1::::<><>::res://scripts/Sentry_bullet.gd<>uid://c5t8cpgs76iuh::::res://assets/My Assets/bullet.png
+main_menu.tscn::PackedScene::8147166515268034482::1711513151::0::1::::<><>::res://scripts/main_menu.gd<>uid://dsr2bjcvn2qae::::res://assets/My Assets/Beackground.png<>uid://papfgg1a2wgt::::res://assets/My Assets/myfont.png
+sentry.tscn::PackedScene::6198225417190667012::1711513151::0::1::::<><>::res://scripts/sentry.gd<>uid://obgoy0d37tdy::::res://assets/My Assets/Sentry_base.png<>uid://kijxxarrrb6h::::res://assets/My Assets/Sentry_head.png<>uid://cdu834b3j31ev::::res://assets/My Assets/scan.png<>uid://dv3atdrm5utrl::::res://assets/My Assets/player light.png
+sentry_bullet.tscn::PackedScene::7234984670531586435::1711513151::0::1::::<><>::res://scripts/Sentry_bullet.gd<>uid://c5t8cpgs76iuh::::res://assets/My Assets/bullet.png
 settings.tscn::PackedScene::4316745021673714358::1711399442::0::1::::<><>::res://scripts/settings.gd
 shop.tscn::PackedScene::2300613183804659298::1711504320::0::1::::<><>::uid://e8kek352fjnx::::res://assets/My Assets/anvil.png<>res://scripts/shop.gd
 story.tscn::PackedScene::3859138250930196393::1711399442::0::1::::<><>::res://scripts/Story.gd<>uid://dsr2bjcvn2qae::::res://assets/My Assets/Beackground.png<>uid://papfgg1a2wgt::::res://assets/My Assets/myfont.png
 stun_area.tscn::PackedScene::8834976047796971702::1711504492::0::1::::<><>::res://scripts/stun_area.gd<>uid://ba5147d2qv2u7::::res://assets/My Assets/stun_bullet.png
-upgrades.tscn::PackedScene::2206339567139802935::1711508634::0::1::::<><>::res://scripts/upgrades.gd
-world.tscn::PackedScene::3263265372997239546::1711508636::0::1::::<><>::res://scripts/world.gd<>uid://dlax2a4nssxca::::res://scenes/character.tscn<>uid://cukp4qkq43liy::::res://scenes/sentry.tscn<>uid://d2uepbx5dceap::::res://assets/My Assets/level change animation.png<>uid://6o1dcn7um008::::res://scenes/upgrades.tscn<>uid://btfah44bt2tn7::::res://scenes/are_you_sure.tscn
-::res://scripts/::1711399442
+upgrades.tscn::PackedScene::2206339567139802935::1711513151::0::1::::<><>::res://scripts/upgrades.gd
+world.tscn::PackedScene::3263265372997239546::1711513152::0::1::::<><>::res://scripts/world.gd<>uid://dlax2a4nssxca::::res://scenes/character.tscn<>uid://cukp4qkq43liy::::res://scenes/sentry.tscn<>uid://d2uepbx5dceap::::res://assets/My Assets/level change animation.png<>uid://6o1dcn7um008::::res://scenes/upgrades.tscn<>uid://btfah44bt2tn7::::res://scenes/are_you_sure.tscn
+::res://scripts/::1711512070
 are_you_sure.gd::GDScript::-1::1711399442::0::1::::<>Control<>::
 bullet.gd::GDScript::-1::1711399442::0::1::::<>Node2D<>::
 Enemy.gd::GDScript::-1::1711505222::0::1::::<>CharacterBody2D<>::

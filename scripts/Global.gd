@@ -39,6 +39,9 @@ var Spawn_pos = Vector2(0, 0)
 var difficulty = 1
 var difficulty_time = 3
 
+#restock soon message
+var restock_soon_message_played = false
+
 #sentry
 var Sentry_damage = 50
 var Sentry_pierce = 1

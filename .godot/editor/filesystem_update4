@@ -1,8 +1,12 @@
-res://scenes/upgrades.tscn
+res://scenes/character.tscn
 res://assets/My Assets/tilemaps/ground.tres
 res://assets/My Assets/tilemaps/corruption.tres
 res://assets/My Assets/tilemaps/sky.tres
+res://scripts/Global.gd
+res://scripts/Player.gd
+res://scripts/upgrades.gd
 res://scenes/main_menu.tscn
+res://scenes/upgrades.tscn
 res://scenes/sentry.tscn
 res://scenes/enemy.tscn
 res://scenes/sentry_bullet.tscn

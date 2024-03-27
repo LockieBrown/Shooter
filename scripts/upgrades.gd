@@ -369,4 +369,5 @@ func _on_restock_pressed():
 	Global.message.play("restock")
 	if Global.Ammo_left > Global.Ammo:
 		Global.Ammo_left = Global.Ammo
+	Global.restock_soon_message_played = false
 

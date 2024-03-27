@@ -144,6 +144,12 @@ func _input(event):
 				$marker_guide/Sprite2D.texture = marksman_rifle_texture
 				
 func _process(delta):
+	#restock soon message
+
+	if Global.Ammo_left < Global.Mag &&  Global.restock_soon_message_played == false:
+		Global.message.play("restocksoon")
+		Global.restock_soon_message_played = true
+	
 	Global.message = $AnimationPlayer
 	#health
 	$CanvasLayer/TextureProgressBar.value = Global.health
